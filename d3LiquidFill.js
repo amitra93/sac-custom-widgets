@@ -31,11 +31,8 @@ function liquidFillGaugeDefaultSettings() {
 }
 
 function loadLiquidFillGauge(elementId, value, config) {
-    if (document.readyState != "complete" && document.readyState != "interactive"){
-        return;
-    }
-
-    console.log("1");
+    if (document.readyState === "complete"){
+        console.log("1");
     if (config == null) config = liquidFillGaugeDefaultSettings();
     console.log("2");
 
@@ -223,6 +220,7 @@ function loadLiquidFillGauge(elementId, value, config) {
             wave.attr('transform', 'translate(' + waveAnimateScale(0) + ',0)');
             animateWave(config.waveAnimateTime);
         });
+    }
     }
 }
 
