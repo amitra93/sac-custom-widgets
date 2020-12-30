@@ -4,7 +4,7 @@
 	"name": "D3",
 	"description": "D3 box",
 	"newInstancePrefix": "googleGauge",
-	"icon": "https://raw.githubusercontent.com/amitra93/sac-custom-widgets/master/d3LiquidFill.png",
+	"icon": "https://amitra93.github.io/sac-custom-widgets/d3LiquidFill.png",
 	"vendor": "SAP",
 	"eula": "",
 	"license": "",
@@ -12,7 +12,7 @@
 		{
 			"kind": "main",
 			"tag": "com-sap-sample-d3",
-			"url": "https://raw.githubusercontent.com/amitra93/sac-custom-widgets/master/d3LiquidFill.js",
+			"url": "https://amitra93.github.io/sac-custom-widgets/d3LiquidFill.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
