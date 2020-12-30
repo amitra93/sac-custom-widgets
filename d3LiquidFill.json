@@ -4,7 +4,7 @@
 	"name": "Google Gauge Box",
 	"description": "A Google Gauge box",
 	"newInstancePrefix": "googleGauge",
-	"icon": "https://raw.githubusercontent.com/amitra93/sac-custom-widgets/master/d3.png",
+	"icon": "https://raw.githubusercontent.com/amitra93/sac-custom-widgets/master/d3LiquidFill.png",
 	"vendor": "SAP",
 	"eula": "",
 	"license": "",
@@ -12,7 +12,7 @@
 		{
 			"kind": "main",
 			"tag": "com-sap-sample-google",
-			"url": "https://raw.githubusercontent.com/amitra93/sac-custom-widgets/master/d3.js",
+			"url": "https://raw.githubusercontent.com/amitra93/sac-custom-widgets/master/d3LiquidFill.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
