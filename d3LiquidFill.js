@@ -1,8 +1,4 @@
-(function() { 
-
-	(function(){
-
-
+(function(){
 
 	let template = document.createElement("template");
 	template.innerHTML = `
@@ -36,14 +32,14 @@
 		}
 
 		onCustomWidgetAfterUpdate(changedProperties) {
-			console.log("onCustomWidgetAfterUpdate")
-			console.log("this._props prop = ", this._props);
+			console.log("*****onCustomWidgetAfterUpdate")
+			console.log("******this._props prop = ", this._props);
 			this._props = { ...this._props, ...changedProperties };
 			var myProps = this._props
-			loadLiquidFillGauge("fillgauge1", props.value);
-			console.log("changedProperties = ", changedProperties);
+			//loadLiquidFillGauge("fillgauge1", props.value);
+			console.log("*******changedProperties = ", changedProperties);
 		}
 	}
 
 	customElements.define("com-sap-sample-d3", d3LiquidFill);
-})})();
+})();
