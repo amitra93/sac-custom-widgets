@@ -163,6 +163,10 @@ class googleGauge extends HTMLElement {
 			var event = new Event("onClick");
 			this.dispatchEvent(event);
 		});
+		this.addEventListener("load", event => {
+			var event = new Event("onLoad");
+			this.dispatchEvent(event);
+		});
 		this._props = {};
 	}
 
