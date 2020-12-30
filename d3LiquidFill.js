@@ -252,7 +252,7 @@ function loadLiquidFillGauge(elementId, value, config) {
 			console.log("-> this._props prop = ", this._props);
 			this._props = { ...this._props, ...changedProperties };
 			var myProps = this._props
-			loadLiquidFillGauge("fillgauge1", props.value);
+			loadLiquidFillGauge("fillgauge1", myProps.value);
 			console.log("-> changedProperties = ", changedProperties);
 		}
 	}
