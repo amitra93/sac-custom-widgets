@@ -222,6 +222,12 @@ function loadLiquidFillGauge(elementId, value, config) {
 
 	let template = document.createElement("template");
 	template.innerHTML = `
+            <style>
+            .liquidFillGaugeText {
+                font-family: Helvetica;
+                font-weight: bold;
+            }
+            </style>
 			<svg id="fillgauge1" width="97%" height="250"></svg>
 		`;
 
