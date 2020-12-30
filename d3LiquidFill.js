@@ -39,23 +39,11 @@
 			console.log("onCustomWidgetAfterUpdate")
 			console.log("this._props prop = ", this._props);
 			this._props = { ...this._props, ...changedProperties };
-
-			var ctx = this.shadowRoot.getElementById('chart_div');
-
 			var myProps = this._props
-			
-			google.charts.load('current', {'packages':['gauge']});
-			google.charts.setOnLoadCallback(function() {
-				drawGauge(myProps);
-			});
+			loadLiquidFillGauge("fillgauge1", props.value);
 			console.log("changedProperties = ", changedProperties);
-
-			function drawGauge(props) {
-				console.log("props =", props)
-				loadLiquidFillGauge("fillgauge1", props.value);
-			}
 		}
 	}
 
 	customElements.define("com-sap-sample-d3", d3LiquidFill);
-})();
+})})();
