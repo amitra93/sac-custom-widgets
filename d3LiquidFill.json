@@ -11,7 +11,7 @@
 	"webcomponents": [
 		{
 			"kind": "main",
-			"tag": "com-sap-sample-google",
+			"tag": "com-sap-sample-d3",
 			"url": "https://raw.githubusercontent.com/amitra93/sac-custom-widgets/master/d3LiquidFill.js",
 			"integrity": "",
 			"ignoreIntegrity": true
