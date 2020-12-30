@@ -221,7 +221,7 @@ function loadLiquidFillGauge(elementId, value, config) {
 			<svg id="fillgauge1" width="97%" height="250"></svg>
 		`;
 
-	class d3 extends HTMLElement {
+	class d3LiquidFill extends HTMLElement {
 		constructor() {
 			super(); 
 			let shadowRoot = this.attachShadow({mode: "open"});
@@ -268,5 +268,5 @@ function loadLiquidFillGauge(elementId, value, config) {
 		}
 	}
 
-	customElements.define("com-sap-sample-d3", d3);
+	customElements.define("com-sap-sample-d3", d3LiquidFill);
 })();
