@@ -234,7 +234,10 @@ function loadLiquidFillGauge(elementId, value, config) {
                 font-weight: bold;
             }
             </style>
-			<svg id="fillgauge1" width="97%" height="250"></svg>
+			<svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+            id="fillgauge1" width="97%" height="250"></svg>
 		`;
 
 	class d3LiquidFill extends HTMLElement {
