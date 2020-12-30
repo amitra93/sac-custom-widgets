@@ -1,8 +1,8 @@
 {
 	"id": "com.sap.sample.googleGauge",
 	"version": "1.0.0",
-	"name": "Google Gauge Box",
-	"description": "A Google Gauge box",
+	"name": "D3",
+	"description": "D3 box",
 	"newInstancePrefix": "googleGauge",
 	"icon": "https://raw.githubusercontent.com/amitra93/sac-custom-widgets/master/d3LiquidFill.png",
 	"vendor": "SAP",
