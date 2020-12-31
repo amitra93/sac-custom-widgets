@@ -37,6 +37,10 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
 
     if (config == null) config = liquidFillGaugeDefaultSettings();
 
+    if (gauge.style("width") === ""){
+        return;
+    }
+
     var gauge = d3.select(shadowRoot).select("#" + elementId);
     var width = parseInt(gauge.style("width"));
     var height = parseInt(gauge.style("height"));
