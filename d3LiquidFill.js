@@ -34,14 +34,16 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
     if (config == null) config = liquidFillGaugeDefaultSettings();
 
     var gauge = d3.select(shadowRoot).select("#" + elementId);
-    var width = parseInt(gauge.width);
-    var height = parseInt(gauge.height);
+    var width = parseInt(gauge.style("width"));
+    var height = parseInt(gauge.style("height"));
     var radius = Math.min(width, height) / 2;
     var locationX = width / 2 - radius;
     var locationY = height / 2 - radius;
     var fillPercent = Math.max(config.minValue, Math.min(config.maxValue, value)) / config.maxValue;
 
     console.log('-> gauge ' + gauge);
+    console.log('-> gauge.style ' + gauge.style);
+    console.log('-> gauge.width ' + gauge.style("width"));
     console.log('-> gauge.width ' + width);
     console.log('-> gauge.height ' + height);
     console.log('-> locationX ' + locationX);
