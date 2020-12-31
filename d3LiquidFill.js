@@ -39,6 +39,11 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
     var locationY = parseInt(gauge.style("height")) / 2 - radius;
     var fillPercent = Math.max(config.minValue, Math.min(config.maxValue, value)) / config.maxValue;
 
+    console.log('-> gauge ' + gauge);
+    console.log('-> gauge.width ' + gauge.style("width"));
+    console.log('-> gauge.height ' + gauge.style("height"));
+    console.log('-> locationX ' + locationX);
+
     var waveHeightScale;
     if (config.waveHeightScaling) {
         waveHeightScale = d3.scale.linear()
@@ -111,10 +116,6 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
     var textRiseScaleY = d3.scale.linear()
         .range([fillCircleMargin + fillCircleRadius * 2, (fillCircleMargin + textPixels * 0.7)])
         .domain([0, 1]);
-
-    console.log('-> locationX ' + locationX);
-    console.log('-> locationY ' + locationY);
-    console.log('-> radius ' + radius);
 
     // Center the gauge within the parent SVG.
     var gaugeGroup = gauge.append("g")
