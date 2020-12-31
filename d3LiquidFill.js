@@ -112,6 +112,10 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
         .range([fillCircleMargin + fillCircleRadius * 2, (fillCircleMargin + textPixels * 0.7)])
         .domain([0, 1]);
 
+    console.log('-> locationX ' + locationX);
+    console.log('-> locationY ' + locationY);
+    console.log('-> radius ' + radius);
+
     // Center the gauge within the parent SVG.
     var gaugeGroup = gauge.append("g")
         .attr('transform', 'translate(' + locationX + ',' + locationY + ')');
