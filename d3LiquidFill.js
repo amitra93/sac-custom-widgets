@@ -42,7 +42,7 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
         var f = function(){
             loadLiquidFillGauge(shadowRoot, elementId, value, config);
         };
-        setTimeout(f, 2000);
+        setTimeout(f, 0);
         return;
     }
 
