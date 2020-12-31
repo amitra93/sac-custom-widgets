@@ -262,6 +262,11 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
                 console.log('-> onLoad being called');
 				this.dispatchEvent(event);
 			});
+            shadowRoot.addEventListener("load", event => {
+                var event = new Event("onLoad");
+                console.log('-> onLoad being called from shadow');
+                this.dispatchEvent(event);
+            });
 			this._props = {};
 		}
 
