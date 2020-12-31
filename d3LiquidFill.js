@@ -37,11 +37,11 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
 
     if (config == null) config = liquidFillGaugeDefaultSettings();
 
+    var gauge = d3.select(shadowRoot).select("#" + elementId);
     if (gauge.style("width") === ""){
         return;
     }
-
-    var gauge = d3.select(shadowRoot).select("#" + elementId);
+    
     var width = parseInt(gauge.style("width"));
     var height = parseInt(gauge.style("height"));
     var radius = Math.min(width, height) / 2;
