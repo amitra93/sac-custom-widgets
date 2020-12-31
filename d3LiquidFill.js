@@ -31,17 +31,13 @@ function liquidFillGaugeDefaultSettings() {
 }
 
 function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
-    if (document.readyState === "complete"){
-        console.log("1");
     if (config == null) config = liquidFillGaugeDefaultSettings();
-    console.log("2");
 
     var gauge = d3.select(shadowRoot).select("#" + elementId);
     var radius = Math.min(parseInt(gauge.style("width")), parseInt(gauge.style("height"))) / 2;
     var locationX = parseInt(gauge.style("width")) / 2 - radius;
     var locationY = parseInt(gauge.style("height")) / 2 - radius;
     var fillPercent = Math.max(config.minValue, Math.min(config.maxValue, value)) / config.maxValue;
-    console.log("3");
 
     var waveHeightScale;
     if (config.waveHeightScaling) {
@@ -53,7 +49,6 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
             .range([config.waveHeight, config.waveHeight])
             .domain([0, 100]);
     }
-    console.log("4");
 
     var textPixels = (config.textSize * radius / 2);
     var textFinalValue = parseFloat(value).toFixed(2);
@@ -68,8 +63,6 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
     var waveLength = fillCircleRadius * 2 / config.waveCount;
     var waveClipCount = 1 + config.waveCount;
     var waveClipWidth = waveLength * waveClipCount;
-
-    console.log("5");
 
     // Rounding functions so that the correct number of decimal places is always displayed as the value counts up.
     var textRounder = function (value) {
@@ -221,7 +214,6 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
             animateWave(config.waveAnimateTime);
         });
     }
-    }
 }
 
 (function(){
@@ -234,7 +226,7 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
                 font-weight: bold;
             }
             </style>
-			<svg xmlns="http://www.w3.org/2000/svg" id="fillgauge1" width="97%" height="250"></svg>
+			<svg id="fillgauge1" width="97%" height="250"></svg>
 		`;
 
 	class d3LiquidFill extends HTMLElement {
@@ -262,8 +254,7 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
 		onCustomWidgetAfterUpdate(changedProperties) {
 			console.log("-> this._props prop = ", this._props);
 			this._props = { ...this._props, ...changedProperties };
-			var myProps = this._props
-			loadLiquidFillGauge(this.shadowRoot, "fillgauge1", myProps.value);
+			loadLiquidFillGauge(this.shadowRoot, "fillgauge1", this._props.value);
 			console.log("-> changedProperties = ", changedProperties);
 		}
 	}
