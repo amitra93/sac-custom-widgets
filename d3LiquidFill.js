@@ -241,8 +241,6 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
             .liquidFillGaugeText {
                 font-family: Helvetica;
                 font-weight: bold;
-                width: 97%;
-                height: 250px;
             }
             </style>
 			<svg id="fillgauge1" width="97%" height="250"></svg>
@@ -257,16 +255,9 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
 				var event = new Event("onClick");
 				this.dispatchEvent(event);
 			});
-			this.addEventListener("load", event => {
-				var event = new Event("onLoad");
-                console.log('-> onLoad being called');
-				this.dispatchEvent(event);
-			});
-            shadowRoot.addEventListener("load", event => {
-                var event = new Event("onLoad");
-                console.log('-> onLoad being called from shadow');
-                this.dispatchEvent(event);
-            });
+            document.body.onload = function(){
+                loadLiquidFillGauge(this.shadowRoot, "fillgauge1", this._props.value);
+            };
 			this._props = {};
 		}
 
