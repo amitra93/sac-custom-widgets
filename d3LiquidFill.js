@@ -39,6 +39,10 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
 
     var gauge = d3.select(shadowRoot).select("#" + elementId);
     if (gauge.style("width") === ""){
+        var f = function(){
+            loadLiquidFillGauge(shadowRoot, elementId, value, config);
+        };
+        setTimeout(f, 2000);
         return;
     }
 
@@ -255,9 +259,6 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
 				var event = new Event("onClick");
 				this.dispatchEvent(event);
 			});
-            document.body.onload = function(){
-                loadLiquidFillGauge(this.shadowRoot, "fillgauge1", this._props.value);
-            };
 			this._props = {};
 		}
 
