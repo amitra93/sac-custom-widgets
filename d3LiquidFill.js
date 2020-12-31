@@ -41,7 +41,7 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
     if (gauge.style("width") === ""){
         return;
     }
-    
+
     var width = parseInt(gauge.style("width"));
     var height = parseInt(gauge.style("height"));
     var radius = Math.min(width, height) / 2;
@@ -259,6 +259,7 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
 			});
 			this.addEventListener("load", event => {
 				var event = new Event("onLoad");
+                console.log('-> onLoad being called');
 				this.dispatchEvent(event);
 			});
 			this._props = {};
