@@ -30,13 +30,13 @@ function liquidFillGaugeDefaultSettings() {
     };
 }
 
-function loadLiquidFillGauge(elementId, value, config) {
+function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
     if (document.readyState === "complete"){
         console.log("1");
     if (config == null) config = liquidFillGaugeDefaultSettings();
     console.log("2");
 
-    var gauge = d3.select("#" + elementId);
+    var gauge = d3.select(shadowRoot).select("#" + elementId);
     var radius = Math.min(parseInt(gauge.style("width")), parseInt(gauge.style("height"))) / 2;
     var locationX = parseInt(gauge.style("width")) / 2 - radius;
     var locationY = parseInt(gauge.style("height")) / 2 - radius;
@@ -263,7 +263,7 @@ function loadLiquidFillGauge(elementId, value, config) {
 			console.log("-> this._props prop = ", this._props);
 			this._props = { ...this._props, ...changedProperties };
 			var myProps = this._props
-			loadLiquidFillGauge("fillgauge1", myProps.value);
+			loadLiquidFillGauge(shadowRoot, "fillgauge1", myProps.value);
 			console.log("-> changedProperties = ", changedProperties);
 		}
 	}
