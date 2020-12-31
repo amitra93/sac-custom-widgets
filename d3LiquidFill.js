@@ -31,6 +31,10 @@ function liquidFillGaugeDefaultSettings() {
 }
 
 function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
+    if (document.readyState !== 'complete'){
+        return;
+    }
+
     if (config == null) config = liquidFillGaugeDefaultSettings();
 
     var gauge = d3.select(shadowRoot).select("#" + elementId);
