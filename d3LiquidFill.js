@@ -40,8 +40,8 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
     var fillPercent = Math.max(config.minValue, Math.min(config.maxValue, value)) / config.maxValue;
 
     console.log('-> gauge ' + gauge);
-    console.log('-> gauge.width ' + gauge.style("width"));
-    console.log('-> gauge.height ' + gauge.style("height"));
+    console.log('-> gauge.width ' + parseInt(gauge.style("width")));
+    console.log('-> gauge.height ' + parseInt(gauge.style("height")));
     console.log('-> locationX ' + locationX);
 
     var waveHeightScale;
