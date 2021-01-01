@@ -66,9 +66,6 @@
 	"events": {
 		"onClick": {
 			"description": "Called when the user clicks the Colored Box."
-		},
-		"onLoad": {
-			"description": "Called when the page finishes loading."
 		}
 	}
 }
