@@ -30,6 +30,11 @@ function liquidFillGaugeDefaultSettings() {
     };
 }
 
+function clearLiquidFillGauge(shadowRoot, elementId){
+    var gauge = d3.select(shadowRoot).select("#" + elementId);
+    gauge.html("");
+}
+
 function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
     if (config == null) config = liquidFillGaugeDefaultSettings();
 
@@ -323,6 +328,7 @@ function loadLiquidFillGauge(shadowRoot, elementId, value, config) {
 		onCustomWidgetAfterUpdate(changedProperties) {
 			console.log("-> this._props prop = ", this._props);
 			this._props = { ...this._props, ...changedProperties };
+            clearLiquidFillGauge(this.shadowRoot, "fillgauge1");
 			loadLiquidFillGauge(this.shadowRoot, "fillgauge1", this._props.value);
 			console.log("-> changedProperties = ", changedProperties);
 		}
